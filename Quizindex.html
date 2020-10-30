@@ -1,0 +1,87 @@
+<!-- 
+
+GIVEN I am taking a code quiz
+WHEN I click the start button
+THEN a timer starts and I am presented with a question
+WHEN I answer a question
+THEN I am presented with another question
+WHEN I answer a question incorrectly
+THEN time is subtracted from the clock
+WHEN all questions are answered or the timer reaches 0
+THEN the game is over
+WHEN the game is over
+THEN I can save my initials and score -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Quiz, Hotshot!</title>
+    <link rel="stylesheet" href="Quizstyle.css">
+</head>
+
+
+<body>
+    <header class="header">
+        <h2 class="displayTime">Time Remaining</h2>
+        
+        <div class="containerHighScore">
+            <h2 class="highScore">High Score</h2>
+        </div>
+    
+        <div class="popQuiz">
+            <h1>Pop Quiz, Hotshot!</h1>
+        </div>   
+        
+        <div class="hopper">
+            <img src="Hopper.gif">
+        </div> 
+            
+        
+
+        
+
+    </header>   
+
+        <p class="openingText">
+            This is your chance Hotshot.  Answer the questions as correctly and quickly as possible.  
+            You've got 60 seconds.
+        </p>
+
+            <div class="startButton">
+                <button class="timeStartButton">Start The Quiz, Hotshot!</button>
+            </div>
+
+            <div class="testtext">
+                <h2 class="testheader"></h2>
+                    <button class="testbutton1"></button>
+                    <button class="testbutton2"></button>
+                    <button class="testbutton3"></button>
+                    <button class="testbutton4"></button>
+            </div>
+
+            <div class="testtext2">
+                <h2 class="testheader2"></h2>
+                    <button class="test2button1"></button>
+                    <button class="test2button2"></button>
+                    <button class="test2button3"></button>
+                    <button class="test2button4"></button>
+            </div>
+
+            <div class="testtext3">
+                <h2 class="testheader3"></h2>
+                    <button class="test3button1"></button>
+                    <button class="test3button2"></button>
+                    <button class="test3button3"></button>
+                    <button class="test3button4"></button>
+            </div>
+
+
+
+
+        
+
+    <script src = "Quizlogic.js"></script>
+</body>
+</html>

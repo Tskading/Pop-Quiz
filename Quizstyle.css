@@ -1,0 +1,34 @@
+h1 {
+    text-emphasis: bold;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hopper {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.displayTime {
+    display: block;
+    float: right;
+    font-weight: bold;
+
+}
+
+p {
+    text-align: center;
+   
+}
+
+.timeStartButton {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+
+}

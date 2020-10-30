@@ -1,2 +1,2 @@
-# Pop-Quiz
-Quick, multiple choice quiz dynamically generated with JavaScript.
+# Pop-Quiz-Hotshot
+A timed javascript multiple choice quiz that can locally store your highscore.
