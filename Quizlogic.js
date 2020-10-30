@@ -50,6 +50,7 @@ var timer;
 var seconds = 60;
 // initial form entery keys
 var entryForm = document.querySelector(".entryForm");
+var label = document.querySelector(".label")
 
 // Hides question data unitl function called
 testText.setAttribute("style", "display:none");
@@ -68,10 +69,13 @@ var startQuiz = function() {
         seconds--;
         
         displayTime.textContent = seconds;
-        if (seconds==0){
+        if (seconds <= 0){
         // This is where I want to say that the game is over.  Then prompt for highscore entry data.
                 clearTimeout(timer);
                 enterInitials();
+                testText.setAttribute("style", "display:none");
+                testText2.setAttribute("style", "display:none");
+                testText3.setAttribute("style", "display:none");        
         }
         }, 1000);
 
@@ -95,6 +99,18 @@ var startQuiz = function() {
                 testButton3.textContent = "answer3";
                 testButton4.textContent = "answer4";
 
+                testButton1.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+                
+                testButton3.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+                
+                testButton4.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+
                 // if user picks correct answer; move to next question
                         // if pick answer2 then hide 'quizQuestion1' and show 'quizQuestion2'
 
@@ -117,6 +133,18 @@ var startQuiz = function() {
                 test2Button3.textContent = "answer3";
                 test2Button4.textContent = "answer4";
 
+                test2Button1.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+                
+                test2Button2.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+                
+                test2Button3.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+
                 test2Button4.addEventListener("click", function(event) {
                         event.stopPropagation();
                         quizQuestion3();
@@ -135,6 +163,18 @@ var startQuiz = function() {
                 test3Button3.textContent = "answer3";
                 test3Button4.textContent = "answer4";
 
+                test3Button2.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+                
+                test3Button3.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+                
+                test3Button4.addEventListener("click", function(event) {
+                        seconds -= 5;                        
+                })
+
                 test3Button1.addEventListener("click", function(event) {
                         event.stopPropagation();                        
                         testText3.setAttribute("style", "display:none");
@@ -144,8 +184,9 @@ var startQuiz = function() {
 
         
         function enterInitials() {
-                clearTimeout(timer)
+                clearTimeout(timer);
                 entryForm.setAttribute("style", "visibility:visible");
+                label.textContent = "Please enter your initials, you've got a high score!"
                 // STOP timer; send timer value to highscores; open dialogue box for initial entry
              localStorage.setItem("timer", JSON.stringify(seconds));
              highScore.textContent = "High Score " +  + seconds;
