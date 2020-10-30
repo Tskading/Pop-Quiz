@@ -48,10 +48,16 @@ var testText3 = document.querySelector(".testtext3");
 // timer keys
 var timer;
 var seconds = 60;
+// initial form entery keys
+var entryForm = document.querySelector(".entryForm");
 
+// Hides question data unitl function called
 testText.setAttribute("style", "display:none");
 testText2.setAttribute("style", "display:none");
 testText3.setAttribute("style", "display:none");
+entryForm.setAttribute("style", "display:none");
+
+
 
 
 
@@ -65,6 +71,7 @@ var startQuiz = function() {
         if (seconds==0){
         // This is where I want to say that the game is over.  Then prompt for highscore entry data.
                 clearTimeout(timer);
+                enterInitials();
         }
         }, 1000);
 
@@ -138,7 +145,8 @@ var startQuiz = function() {
         
         function enterInitials() {
                 clearTimeout(timer)
+                entryForm.setAttribute("style", "visibility:visible");
                 // STOP timer; send timer value to highscores; open dialogue box for initial entry
              localStorage.setItem("timer", JSON.stringify(seconds));
-             highScore.textContent = seconds;
+             highScore.textContent = "High Score " +  + seconds;
         }
