@@ -50,4 +50,5 @@ button {
 button:hover {
     background-color: blueviolet;
     transform: scale(1.1);
+    border-radius: 20%;
 }
