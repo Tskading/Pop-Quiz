@@ -1,8 +1,14 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2017/03/25/17/56/color-2174049_960_720.png") ;
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 h1 {
     text-emphasis: bold;
     text-align: center;
     text-decoration: underline;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 
 .hopper {
@@ -31,4 +37,17 @@ p {
     margin-right: auto;
     width: 30%;
 
+}
+
+.testtext, .testtext2, .testtext3  {
+    text-align: center;
+}
+
+button {
+    background-color: cornflowerblue;
+}
+
+button:hover {
+    background-color: blueviolet;
+    transform: scale(1.1);
 }

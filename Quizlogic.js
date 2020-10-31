@@ -51,6 +51,10 @@ var seconds = 60;
 // initial form entery keys
 var entryForm = document.querySelector(".entryForm");
 var label = document.querySelector(".label")
+var initials = document.querySelector(".initials");
+var submit = document.querySelector(".submit");
+var initialsValue;
+
 
 // Hides question data unitl function called
 testText.setAttribute("style", "display:none");
@@ -91,13 +95,13 @@ var startQuiz = function() {
 
         function quizQuestion1() {
 
-                testText.setAttribute("style", "visibility:visible");
+                testText.setAttribute("style", "visibility:visible text-align:center" );
 
-                testHeader.textContent = "question one";
-                testButton1.textContent = "answer1";
-                testButton2.textContent = "answer2";
-                testButton3.textContent = "answer3";
-                testButton4.textContent = "answer4";
+                testHeader.textContent = "What movie was the opening .gif from?";
+                testButton1.textContent = "Easy Rider";
+                testButton2.textContent = "Speed";
+                testButton3.textContent = "Apocalypse Now";
+                testButton4.textContent = "Blue Velvet";
 
                 testButton1.addEventListener("click", function(event) {
                         seconds -= 5;                        
@@ -119,19 +123,18 @@ var startQuiz = function() {
                         quizQuestion2();
                         testText.setAttribute("style", "display:none");
                 });      
-                // if user picks incorrect answer: subtract 5 seconds from 'seconds'
-                        // 'if else' subtract 5 from seconds
+                
         }
 
         function quizQuestion2() {
 
                 testText2.setAttribute("style", "visibility:visible");
 
-                testHeader2.textContent = "question two";
-                test2Button1.textContent = "answer1";
-                test2Button2.textContent = "answer2";
-                test2Button3.textContent = "answer3";
-                test2Button4.textContent = "answer4";
+                testHeader2.textContent = "What is the worst Dennis Hopper movie?";
+                test2Button1.textContent = "Super Mario Bros.";
+                test2Button2.textContent = "From Hell to Texas";
+                test2Button3.textContent = "Rumble Fish";
+                test2Button4.textContent = "Waterworld";
 
                 test2Button1.addEventListener("click", function(event) {
                         seconds -= 5;                        
@@ -157,11 +160,11 @@ var startQuiz = function() {
 
                 testText3.setAttribute("style", "visibility:visible");
 
-                testHeader3.textContent = "question three";
-                test3Button1.textContent = "answer1";
-                test3Button2.textContent = "answer2";
-                test3Button3.textContent = "answer3";
-                test3Button4.textContent = "answer4";
+                testHeader3.textContent = "Dennis Hopper narrates a song in a Gorillaz ablum.  Pick the name of that song:";
+                test3Button1.textContent = "Fire Coming Out of the Monkeys Head";
+                test3Button2.textContent = "Don't Get Lost in Heaven";
+                test3Button3.textContent = "Kids with Guns";
+                test3Button4.textContent = "Last Living Souls";
 
                 test3Button2.addEventListener("click", function(event) {
                         seconds -= 5;                        
@@ -182,12 +185,31 @@ var startQuiz = function() {
                 });      
         }
 
-        
+       
+        // STOP timer; send timer value to highscores; open dialogue box for initial entry
         function enterInitials() {
                 clearTimeout(timer);
                 entryForm.setAttribute("style", "visibility:visible");
-                label.textContent = "Please enter your initials, you've got a high score!"
-                // STOP timer; send timer value to highscores; open dialogue box for initial entry
+                label.textContent = "Please enter your initials, you've got a high score!";
+                
+                
+
+                // highScore.setItem("highscore", JSON.stringify(highScore));
              localStorage.setItem("timer", JSON.stringify(seconds));
-             highScore.textContent = "High Score " +  + seconds;
+             
+             entryForm.addEventListener("submit", function (event) { 
+                     event.preventDefault();
+                    var initialsValue = initials.value;
+                    localStorage.setItem("entryForm", JSON.stringify(initialsValue));
+
+                    console.log(initialsValue);
+                    console.log(initials);
+                    console.log(seconds);
+              })
+             
+             highScore.textContent = "High Score " + seconds;
         }
+
+
+
+
