@@ -15,7 +15,7 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 35%;
 }
 
 .displayTime {
@@ -49,6 +49,6 @@ button {
 
 button:hover {
     background-color: blueviolet;
-    transform: scale(1.1);
-    border-radius: 20%;
+    transform: scale(1.05);
+    border-radius: 5%;
 }

@@ -1,18 +1,3 @@
-// Need a start button
-
-// That starts a timer
-
-// And presents a set of multiple choice questions
-
-// When correct move to next question
-
-// When incorrect alert user and subtract time from counter
-
-// Bring up score when timer is zero or all questions are answered
-
-// Allow user to input initials and save highscores
-
-///////////////////////////////////////////////////////////////////////////////////////////
 // html keys
 var header = document.querySelector(".header");
 var displayTime = document.querySelector(".displayTime");
@@ -54,6 +39,7 @@ var label = document.querySelector(".label")
 var initials = document.querySelector(".initials");
 var submit = document.querySelector(".submit");
 var initialsValue;
+
 
 
 // Hides question data unitl function called
@@ -194,22 +180,26 @@ var startQuiz = function() {
                 
                 
 
-                // highScore.setItem("highscore", JSON.stringify(highScore));
+                
              localStorage.setItem("timer", JSON.stringify(seconds));
              
              entryForm.addEventListener("submit", function (event) { 
                      event.preventDefault();
-                    var initialsValue = initials.value;
+                    initialsValue = initials.value;
                     localStorage.setItem("entryForm", JSON.stringify(initialsValue));
 
                     console.log(initialsValue);
                     console.log(initials);
                     console.log(seconds);
+                    console.log(submit);
+
+                    highScore.textContent = "High Score: " + initialsValue + " " + seconds;
               })
+
              
-             highScore.textContent = "High Score " + seconds;
+
+            
         }
 
 
-
-
+       
